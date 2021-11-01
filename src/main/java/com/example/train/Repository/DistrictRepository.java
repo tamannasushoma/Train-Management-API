@@ -9,9 +9,9 @@ import java.util.List;
 
 @Repository
 public interface DistrictRepository extends JpaRepository<District, Long> {
-    @Query(value = "SELECT s.station_name as Station, d.district_name as District, div.div_name as Division " +
+    @Query(value = "SELECT s.station_name as Station, d.district_name as District, d.district_id as Id, v.div_name as Division " +
             "FROM station_info s" +
             " INNER JOIN district d ON s.district_id = d.district_id " +
-            " JOIN division div ON d.div_id = div.division_id", nativeQuery = true)
+            " INNER JOIN division v ON d.div_id = v.division_id", nativeQuery = true)
     List<API3> getDistrictInformation();
 }

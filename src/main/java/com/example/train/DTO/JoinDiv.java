@@ -8,6 +8,7 @@ import lombok.ToString;
 
 
 public interface JoinDiv {
+    String getTrainId();
     String getTrainName();
     String getSeatNo();
     String getDestinationStation();

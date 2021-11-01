@@ -27,6 +27,7 @@ public class BookingTable {
     @Column(name="Passenger_Name")
     private String PassengerName;
 
+//    @Temporal(TemporalType.DATE)
     @Column(name= "Travel_Time_Date")
     private String TravelTimeDate;
 
@@ -39,8 +40,8 @@ public class BookingTable {
     @Column(name="seat_no")
     private String seatNo;
 
-    @Column(name="destination")
-    private String destination;
+//    @Column(name="destination")
+//    private String destination;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="train_booking",

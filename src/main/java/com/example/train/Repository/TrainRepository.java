@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface TrainRepository extends JpaRepository<Train, Long> {
-    @Query(value = "SELECT t.train_name as trainName, t.seat_no as seatNo, s.station_name as destinationStation " +
+    @Query(value = "SELECT t.train_id as trainId, t.train_name as trainName, t.seat_no as seatNo, s.station_name as destinationStation " +
             "FROM train_info t INNER JOIN Train_station_mapping m ON t.train_id = m.train_id " +
             "JOIN station_info s ON m.station_id = s.station_id", nativeQuery = true)
     List<JoinDiv> getJoinInformation();
